@@ -36,52 +36,52 @@
                                     </div>
     
                                     <div class="pt-0">
-                                        <form action="{{ route('login') }}" method="POST" class="my-4">
-                                            @csrf
+                            <form action="{{ route('admin.login') }}" method="POST" class="my-4">
+                                @csrf
 
-                                            @if (session('error'))
-                                                <div class="alert alert-danger">
-                                                    {{ session('error') }}
-                                                </div>              
-                                            @endif
-                                            <div class="form-group mb-3">
-                                                <label for="emailaddress" class="form-label">Email address</label>
-                                                <input class="form-control" type="email" id="email" name="email" required="" placeholder="Enter your email">
-                                                @error('email')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                
-                                            <div class="form-group mb-3">
-                                                <label for="password" class="form-label">Password</label>
-                                                <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
-                                                @error('password')
-                                                    <small class="text-denger">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group d-flex mb-3">
-                                                {{-- <div class="col-sm-6">
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                                        <label class="form-check-label" for="checkbox-signin">Remember me</label>
-                                                    </div>
-                                                </div> --}}
-
-                                                <div class="col-sm-6 text-end">
-                                                    <a class='text-muted fs-14' href='auth-recoverpw.html'>Forgot password?</a>                             
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="form-group mb-0 row">
-                                                <div class="col-12">
-                                                    <div class="d-grid">
-                                                        <button class="btn btn-primary" type="submit"> Log In </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>              
+                                @endif
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress" class="form-label">Email address</label>
+                                    <input class="form-control" type="email" id="email" name="email" required="" placeholder="Enter your email">
+                                    @error('email')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
     
+                                <div class="form-group mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
+                                    @error('password')
+                                        <small class="text-denger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group d-flex mb-3">
+                                    {{-- <div class="col-sm-6">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
+                                            <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                        </div>
+                                    </div> --}}
+
+                                    <div class="col-sm-6 text-end">
+                                        <a class='text-muted fs-14' href='auth-recoverpw.html'>Forgot password?</a>                             
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group mb-0 row">
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" type="submit"> Log In </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
                                         <div class="saprator my-4"><span>or sign in with</span></div>
     
                                         <div class="text-center text-muted mb-4">
