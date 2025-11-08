@@ -19,7 +19,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+// 2TFA
 Route::get('admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 Route::post('admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/verify', [AdminController::class, 'showVerification'])->name('custom.verification.form');
 Route::post('/verify', [AdminController::class, 'VerificationVerify'])->name('custom.verification.verify');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+});
